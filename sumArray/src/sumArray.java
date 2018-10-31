@@ -14,9 +14,7 @@ class SumArray extends RecursiveTask {
     protected Integer compute() {
         if (hi - lo < SEQUENTIAL_CUTOFF) {
             int ans = 0;
-            for (int i = lo; i < hi; i++) {
-                ans += arr[i];
-            }
+            for (int i = lo; i < hi; i++) ans += arr[i];
             return ans;
         } else {
             SumArray left = new SumArray(arr, lo, (lo + hi) / 2);

@@ -20,9 +20,7 @@ class SumArray extends RecursiveTask {
             SumArray left = new SumArray(arr, lo, (lo + hi) / 2);
             SumArray right = new SumArray(arr, (lo + hi) / 2, hi);
             left.fork();
-            int rightAns = right.compute();
-            int leftAns = left.compute();
-            return leftAns + rightAns;
+            return right.compute() + left.join();
         }
 
     }

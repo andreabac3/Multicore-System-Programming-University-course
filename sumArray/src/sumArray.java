@@ -12,7 +12,7 @@ class SumArray extends RecursiveTask {
     }
 
     protected Integer compute() {
-        if (hi - lo < SEQUENTIAL_CUTOFF) {
+        if ((hi - lo) < SEQUENTIAL_CUTOFF) {
             for (int i = lo; i < hi; i++) this.result += arr[i];
             return this.result;
         } else {
